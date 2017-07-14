@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+spec:
+  replicas: {{ .Values.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "fullname" . }}
+    spec:
+      securityContext:
+        runAsUser: 0
+      containers:
+      {{ include "reviewbot" . | indent 6 }}
+      {{ include "seal" . | indent 6 }}
+      volumes:
+      - name: seal-crontab
+        configMap:
+          name: seal-crontab
+          defaultMode: 0644
+      - name: seal-scripts
+        configMap:
+          name: seal-scripts
+          defaultMode: 0755
+      

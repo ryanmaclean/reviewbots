@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: seal-scripts
+data:
+  {{- $githubtoken := .Values.seal.githubToken -}}
+  {{- $slackhook := .Values.seal.slackWebhook -}}
+  {{- $slackchannel := .Values.seal.slackChannel -}}
+  {{- $githubmembers := .Values.seal.githubMembers -}}
+  {{- $githublabels := .Values.seal.githubLabels -}}
+  {{- range .Values.seal.orgs }}
+  {{ .name }}.sh: |-
+    export PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+    # app properties
+    export SEAL_ORGANISATION="ZonarSystems"
+    export GITHUB_TOKEN="{{ $githubtoken }}"
+    export SLACK_WEBHOOK="{{ $slackhook }}"
+    export SLACK_CHANNEL="{{ $slackchannel }}"
+    export GITHUB_MEMBERS="{{ $githubmembers }}"
+    export GITHUB_USE_LABELS=true
+    export GITHUB_EXCLUDE_LABELS="{{ $githublabels }}"
+    # sealbot only likes to run on heroku :/
+    export DYNO=dummy
+
+    /usr/local/bin/ruby -C /usr/src/app/ bin/seal.rb dummyteam
+  {{- end }}

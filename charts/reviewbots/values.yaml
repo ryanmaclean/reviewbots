@@ -1,0 +1,35 @@
+# Default values for engineer-notifier.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+replicaCount: 1
+notifier:
+  slackToken: changeme
+  handleHash: '{"@maratoid": "@U0E20UH2L", "@kmansel": "@U2CJDD5FY", "@jfelten": "@U2G6XUDC5", "@l337ch": "@U0E1XC0F3", "@steve-hetzel": "@U2X0A6ZML", "@NancyHarvey": "@U5Z2E0M32"}'
+  slackChannels: '["C3V71VD7Y"]'
+  image:
+    repository: quay.io/samsung_cnct/engineer-notifier
+    tag: latest
+    pullPolicy: Always
+seal:
+  image:
+    repository: quay.io/samsung_cnct/sealbot
+    tag: latest
+    pullPolicy: Always
+  githubToken: changeme
+  slackWebhook: changeme
+  slackChannel: '#team-zonar'
+  githubMembers: "maratoid,jfelten,kmansel,steve-hetzel,NancyHarvey,l337ch"
+  githubLabels: "[DO NOT MERGE],Don't merge,DO NOT MERGE,wip,[WIP],[NO SEAL],[NO REVIEWBOT]"
+  orgs:
+    - name: ZonarSystems
+      crontab: "0 16 * * *"
+    - name: samsung-cnct
+      crontab: "1 16 * * *"
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+

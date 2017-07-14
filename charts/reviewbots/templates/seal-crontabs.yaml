@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: seal-crontab
+data:
+  root: |-
+    {{- range .Values.seal.orgs }}
+    {{ .crontab  }} /usr/src/app/crontabs/{{ .name }}.sh
+    {{- end }}
+    # An empty line is required at the end of this file
