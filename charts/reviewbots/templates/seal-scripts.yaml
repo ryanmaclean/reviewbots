@@ -13,7 +13,7 @@ data:
     export PATH=/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
     # app properties
-    export SEAL_ORGANISATION="ZonarSystems"
+    export SEAL_ORGANISATION="{{ .name }}"
     export GITHUB_TOKEN="{{ $githubtoken }}"
     export SLACK_WEBHOOK="{{ $slackhook }}"
     export SLACK_CHANNEL="{{ $slackchannel }}"
