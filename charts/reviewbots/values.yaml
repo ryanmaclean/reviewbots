@@ -4,7 +4,7 @@
 replicaCount: 1
 notifier:
   slackToken: changeme
-  handleHash: '{"@maratoid": "@U0E20UH2L", "@kmansel": "@U2CJDD5FY", "@jfelten": "@U2G6XUDC5", "@l337ch": "@U0E1XC0F3", "@steve-hetzel": "@U2X0A6ZML", "@NancyHarvey": "@U5Z2E0M32"}'
+  handleHash: '{"@maratoid": "@U0E20UH2L", "@kmansel": "@U2CJDD5FY", "@jfelten": "@U2G6XUDC5", "@l337ch": "@U0E1XC0F3", "@steve-hetzel": "@U2X0A6ZML", "@NancyHarvey": "@U5Z2E0M32", "mbachtel": "@U6459BD7V"}'
   slackChannels: '["C3V71VD7Y"]'
   image:
     repository: quay.io/samsung_cnct/engineer-notifier
