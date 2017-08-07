@@ -18,7 +18,7 @@ seal:
   githubToken: changeme
   slackWebhook: changeme
   slackChannel: '#team-zonar'
-  githubMembers: "maratoid,jfelten,kmansel,steve-hetzel,NancyHarvey,l337ch"
+  githubMembers: "maratoid,jfelten,kmansel,steve-hetzel,NancyHarvey,l337ch,mbachtel"
   githubLabels: "[DO NOT MERGE],Don't merge,DO NOT MERGE,wip,[WIP],[NO SEAL],[NO REVIEWBOT]"
   orgs:
     - name: ZonarSystems
