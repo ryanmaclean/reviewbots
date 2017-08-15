@@ -4,8 +4,8 @@
 replicaCount: 1
 notifier:
   slackToken: changeme
-  handleHash: '{"@maratoid": "@U0E20UH2L", "@kmansel": "@U2CJDD5FY", "@jfelten": "@U2G6XUDC5", "@l337ch": "@U0E1XC0F3", "@steve-hetzel": "@U2X0A6ZML", "@NancyHarvey": "@U5Z2E0M32", "mbachtel": "@U6459BD7V"}'
-  slackChannels: '["C3V71VD7Y"]'
+  handleHash: '{"@paranoid-android": "@U0E20UH2L"}'
+  slackChannels: '["EXAMPLE"]'
   image:
     repository: quay.io/samsung_cnct/engineer-notifier
     tag: latest
@@ -17,14 +17,12 @@ seal:
     pullPolicy: Always
   githubToken: changeme
   slackWebhook: changeme
-  slackChannel: '#team-zonar'
-  githubMembers: "maratoid,jfelten,kmansel,steve-hetzel,NancyHarvey,l337ch,mbachtel"
+  slackChannel: '#team-team'
+  githubMembers: "paranoid-android"
   githubLabels: "[DO NOT MERGE],Don't merge,DO NOT MERGE,wip,[WIP],[NO SEAL],[NO REVIEWBOT]"
   orgs:
-    - name: ZonarSystems
+    - name: THESYSTEM
       crontab: "0 16 * * *"
-    - name: samsung-cnct
-      crontab: "1 16 * * *"
 resources:
   limits:
     cpu: 100m
