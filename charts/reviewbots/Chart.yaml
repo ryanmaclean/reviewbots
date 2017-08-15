@@ -1,4 +1,4 @@
 apiVersion: v1
-description: A Helm chart for engineer-notifier bot + seal bot
-name: reviewbots
-version: 0.1.0
+description: A Helm chart for a chatbot that notifies on new repository changes
+name: pr-reviewbot
+version: 0.1.1
